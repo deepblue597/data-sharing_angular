@@ -1,0 +1,87 @@
+<!-- <table>
+    <tr>
+        <th> food </th>
+        <th>drink</th>
+    </tr>
+    <td> <app-child *ngFor="let food of todaysFood" [food]="food" > {{food}} </app-child>
+    </td>
+    
+    
+    
+</table> --> 
+<!-- <app-child *ngFor="let food of todaysFood" [food]="food" > {{food}} </app-child> 
+
+<app-child (newBeverageEmitter)="addBeverage($event)"></app-child>
+
+<ul>
+    <li *ngFor="let bev of todaysBeverage"> {{ bev }} </li>
+</ul>  -->
+
+<!-- codevolution videos -->
+
+<!-- interpolation -->
+
+<h1> {{pageTitle}} </h1>
+
+<!-- property binding -->
+
+<div>
+    <img [src]="imgUrl" alt="image">
+</div>
+
+<!-- event binding  -->
+
+<div>
+    <button (click)="incrementCount()"> Click </button>
+    <p> clicked {{ count }} times </p> 
+</div>
+
+<!-- two way binding -->
+<!-- he says something about if its in a form tag it needs name attribue to be put but i didnt quite understand
+check 3rd video 8:30 mins -->
+<!-- ngModel assigns immediately the string that i write to the name variable-->
+<!-- nice to be used when we want something to be preserved without clicking anywhere-->
+<div>
+    <input type="text" [(ngModel)]="name">
+    <p> Welcome {{name }} </p> 
+</div>
+
+<!-- Split 2-way binding 4th video -->
+<div>
+    <input type="text" [ngModel]="username" (ngModelChange)="greetJason($event)">
+    <p> Hello {{username}} </p>
+</div>
+
+<!-- video 5 getters and setters -->
+<!-- Here we are binding the getters and setters to the ngModel not the _customerName property-->
+<div>
+    <input type="text" [(ngModel)]="customerName">
+    <p> Welcome {{customerName }} </p> 
+</div>
+
+<!-- 6th video viewchild decorator -->
+
+<div>
+    <input #nameRef type="text" [(ngModel)]="names">
+    <p> Welcome {{names }} </p> 
+</div>
+
+<!-- 8th video input decorator -->
+<app-child (greetEvent)="greet($event)" #child [loggedIn]="userLoggedIn"> </app-child>
+<br> 
+<button (click)="userLoggedIn=true"> log In</button>
+<button (click)="userLoggedIn=false">log out  </button>
+<br> 
+{{userLoggedIn}}
+<br> 
+{{child.name}}
+<button (click)="child.greetJason() "> Greet</button>
+
+<!-- by using the #child attribute we have access to all the properties and methods of the child component-->
+<!-- very convenient for our purpose -->
+
+<!-- 14th video services -->
+
+<h1> Teacher </h1> 
+<button (click)="greetStudent()"> Greet student </button>
+<button (click)="appreciateStudent()"> appreciate student </button>
